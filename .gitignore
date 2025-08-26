@@ -1,0 +1,71 @@
+# Archivo .gitignore para el proyecto de bioinformática 'lvar'
+# Archivos y carpetas de configuración y ejecución locales
+/run_pipeline.sh
+/config/
+
+# Ignorar carpetas de datos y resultados
+/data/
+/results/
+/logs/
+# -----------------------------------------------------------------------------
+# Ignorar todos los datos de entrada.
+# Estos archivos suelen ser muy grandes y no deben estar bajo control de versiones.
+# El README debe explicar cómo obtenerlos o dónde colocarlos.
+# -----------------------------------------------------------------------------
+/data/raw_fastq/*
+/data/reference/*
+# Descomenta la siguiente línea si quieres ignorar la carpeta 'data' completa
+# /data/
+
+# -----------------------------------------------------------------------------
+# Ignorar todos los resultados generados por el pipeline.
+# El pipeline es reproducible; los resultados se pueden generar de nuevo.
+# Esto mantiene el repositorio pequeño y enfocado en el código.
+# -----------------------------------------------------------------------------
+/results/
+
+# -----------------------------------------------------------------------------
+# Ignorar los directorios de logs.
+# Son específicos de cada ejecución y no son parte del código fuente.
+# -----------------------------------------------------------------------------
+/logs/
+*.log
+
+# -----------------------------------------------------------------------------
+# Ignorar archivos y directorios internos de Snakemake.
+# Snakemake los usa para el bloqueo de archivos y metadatos.
+# -----------------------------------------------------------------------------
+.snakemake/
+
+# -----------------------------------------------------------------------------
+# Ignorar archivos de configuración y ejecución locales.
+# Estos son específicos del sistema de cada usuario y no deben ser compartidos.
+# -----------------------------------------------------------------------------
+/run_pipeline.sh
+config/config.local.yaml
+
+# -----------------------------------------------------------------------------
+# Ignorar archivos de caché y compilados de Python.
+# -----------------------------------------------------------------------------
+__pycache__/
+*.pyc
+*.pyo
+
+# -----------------------------------------------------------------------------
+# Ignorar archivos temporales comunes de editores de texto y sistemas operativos.
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editores de texto (Vim, Emacs, VSCode)
+*~
+*.swp
+*.swo
+.vscode/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
